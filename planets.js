@@ -49,10 +49,7 @@ for(let i = 0; i < solarSystem.length; i++){
     // console.log(solarSystem[i]);
     if(solarSystem[i].ringSystem === true){
         // console.log(`${solarSystem.name} have rings`)
-        console.log("I have rings")
-    } else{
-        // console.log(`${solarSystem.name} don't have rings`);
-        console.log("I don't have rings");
+        // console.log(solarSystem[i]);
     }
 }
 //   Expected result for question 8
@@ -218,11 +215,30 @@ for(let i = 0; i < solarSystem.length; i++){
 //   Write the commands you would use to do the following:
   
 //   1. console.log the mass of Mercury
-console.log(system.mercury.mass);
+    // console.log(system.mercury.mass);
 //   2. console.log the eccentricity of Venus
-console.log(system.venus.eccentricity);
+    // console.log(system.venus.eccentricity);
 //   3. console.log the sum of the number of satellites of Jupiter, Saturn, Uranus, and Neptune (131)
-console.log(system.jupiter.satellites + system.saturn.satellites + system.uranus.satellites + system.neptune.satellites);
+const sumOfSatt = (planetOne, planetTwo, planetThree, planetFour) => {
+    return parseInt(planetOne) + parseInt(planetTwo) + parseInt(planetThree) + parseInt(planetFour);
+}
+    // console.log(sumOfSatt(system.jupiter.satellites, system.saturn.satellites, system.uranus.satellites, system.neptune.satellites));
 //   4. Write a conditional that checks if Mercury's `radiusp` is a string (remember the `typeof` command). If Mercury's `radiusp` is a string, change the value to be the same as its `radiuse` value. (`radiusp` is radius at the poles, `radiuse` is radius at the equator).
+    if(typeof (system.mercury.radiusp) === "string"){
+        (system.mercury.radiusp) = (system.mercury.radiuse)
+    }
 //   5. console.log Mercury's `radiusp` (should be 2439, not 'same').
+    // console.log(system.mercury.radiusp);
 //   6. Find the difference between Jupiter's **momentum** and Pluto's **momentum**. (To get momentum, you'll want the product of **velocity** and **mass**). 
+    // console.log(system.jupiter.velocity);
+    // console.log(system.jupiter.mass);
+    let jupiterMomentum = (system.jupiter.velocity) * (system.jupiter.mass)
+    // console.log(jupiterMomentum);
+
+    // console.log(system.pluto.velocity);
+    // console.log(system.pluto.mass);
+    let plutoMomentum = (system.pluto.velocity) * (system.pluto.mass)
+    // console.log(plutoMomentum);
+
+    let answer = jupiterMomentum - plutoMomentum;
+    console.log(answer);
